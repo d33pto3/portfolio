@@ -1,15 +1,15 @@
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 4rem;
+  padding: 2rem 12rem;
   overflow: hidden;
 }
 
 .hero-title {
   font-family: var(--font-primary);
-  font-size: clamp(3rem, 8vw, 8rem); /* Reduced size */
+  font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 700;
   line-height: 0.9;
   text-transform: uppercase;
@@ -37,8 +37,53 @@
   margin-left: 0.5rem;
 }
 
+
+/* Responsive line breaks */
+/* Large screens (>1024px): "FULL STACK DEVELOPER" - all on one line */
+.break-medium,
+.break-small {
+  display: none;
+}
+
+.space-large {
+  display: inline-block;
+}
+
+/* Medium screens (768px - 1024px): "FULL STACK" on first line, "DEVELOPER" on second */
+@media (max-width: 1024px) {
+  .break-medium {
+    display: block;
+  }
+  
+  .space-large {
+    display: none;
+  }
+  
+  .break-small {
+    display: none;
+  }
+  
+  .hero {
+    padding: 2rem 4rem;
+  }
+}
+
+/* Small screens (<768px): "FULL", "STACK", "DEVELOPER" each on separate lines */
 @media (max-width: 768px) {
   .hero {
     padding: 0 1.5rem;
+  }
+  
+  .break-medium,
+  .break-small {
+    display: block;
+  }
+  
+  .space-large {
+    display: none;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
   }
 }

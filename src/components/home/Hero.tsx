@@ -22,16 +22,50 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  const title = "FULL STACK DEVELOPER";
+  const renderTitle = () => {
+    const words = ["FULL", "STACK", "DEVELOPER"];
+    const result: React.ReactNode[] = [];
+    
+    words.forEach((word, wordIndex) => {
+      // Add each character of the word
+      word.split("").forEach((char, charIndex) => {
+        result.push(
+          <span key={`char-${wordIndex}-${charIndex}`} className="hero-char-wrapper">
+            <span className="hero-char">{char}</span>
+          </span>
+        );
+      });
+      
+      // Add responsive breaks after each word
+      if (wordIndex === 0) {
+        // Break after "FULL" - hidden on large, visible on medium and small
+        result.push(<br key="break-1" className="break-medium" />);
+      } else if (wordIndex === 1) {
+        // Space between "FULL" and "STACK" on large screens
+        result.push(
+          <span key="space-1" className="hero-char-wrapper space-large">
+            <span className="hero-char">&nbsp;</span>
+          </span>
+        );
+        // Break after "STACK" - hidden on large and medium, visible on small
+        result.push(<br key="break-2" className="break-small" />);
+      } else if (wordIndex < words.length - 1) {
+        // Space between other words
+        result.push(
+          <span key={`space-${wordIndex}`} className="hero-char-wrapper">
+            <span className="hero-char">&nbsp;</span>
+          </span>
+        );
+      }
+    });
+    
+    return result;
+  };
 
   return (
     <section className="hero" ref={containerRef}>
       <h1 className="hero-title">
-        {title.split("").map((char, index) => (
-          <span key={index} className="hero-char-wrapper">
-             <span className="hero-char">{char === " " ? "\u00A0" : char}</span>
-          </span>
-        ))}
+        {renderTitle()}
       </h1>
       <p className="hero-subtitle">
         Building Digital Experiences

@@ -1,5 +1,5 @@
 .project-list-section {
-  padding: 4rem 0;
+  padding: var(--spacing-section) 0;
   position: relative;
   z-index: 10;
   background-color: var(--color-bg); /* Ensure it covers anything behind if needed */
