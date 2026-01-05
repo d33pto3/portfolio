@@ -10,6 +10,14 @@
   transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   mix-blend-mode: difference;
   transform-origin: center center;
-  background-color: #fff;
+  background-color: #fff; /* Default */
+}
+
+.custom-cursor.theme-dark {
+  background-color: #ffffff;
+}
+
+.custom-cursor.theme-light {
+  background-color: #e0e0e0; /* Slightly off-white to soften the inversion on light background */
 }
 

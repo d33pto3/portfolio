@@ -10,11 +10,11 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <SmoothScroll>
-      <CustomCursor />
       <Navbar />
-      <main className="main-content">
+      <main className="main-content" style={{ backgroundColor: 'var(--color-bg)'}}>
         {children}
       </main>
+      <CustomCursor />
     </SmoothScroll>
   );
 }

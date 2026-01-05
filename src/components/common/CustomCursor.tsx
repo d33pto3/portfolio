@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import './CustomCursor.css';
+import { useTheme } from '../../context/ThemeContext';
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -56,5 +58,5 @@ export default function CustomCursor() {
     }
   }, [isHovering]);
 
-  return <div ref={cursorRef} className="custom-cursor" />;
+  return <div ref={cursorRef} className={`custom-cursor theme-${theme}`} />;
 }
