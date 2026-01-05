@@ -27,9 +27,18 @@ export default function Hero() {
   return (
     <section className="hero" ref={containerRef}>
       <h1 className="hero-title">
-        {title.split("").map((char, index) => (
-          <span key={index} className="hero-char-wrapper">
-             <span className="hero-char">{char === " " ? "\u00A0" : char}</span>
+        {title.split(" ").map((word, wordIndex) => (
+          <span key={wordIndex} className="hero-word">
+            {word.split("").map((char, charIndex) => (
+              <span key={charIndex} className="hero-char-wrapper">
+                <span className="hero-char">{char}</span>
+              </span>
+            ))}
+            {wordIndex < title.split(" ").length - 1 && (
+              <span className="hero-char-wrapper">
+                <span className="hero-char">&nbsp;</span>
+              </span>
+            )}
           </span>
         ))}
       </h1>

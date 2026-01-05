@@ -12,7 +12,6 @@ export default function Navbar() {
         <Link to="/">RAKIN FARHAN</Link>
       </div>
       <div className="navbar-links">
-        <Link to="/work" data-hover="true">Work</Link>
         <Link to="/about" data-hover="true">About</Link>
         <a href="mailto:hello@rakinfarhan.com" data-hover="true">Contact</a>
         <button 

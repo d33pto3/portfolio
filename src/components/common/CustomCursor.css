@@ -4,10 +4,17 @@
   left: 0;
   width: 16px;
   height: 16px;
-  background-color: #fff;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center center;
+}
+
+.custom-cursor.theme-dark {
+  background-color: #fff;
+}
+
+.custom-cursor.theme-light {
+  background-color: #000;
 }

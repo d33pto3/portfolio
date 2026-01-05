@@ -18,7 +18,7 @@
   border-top: 1px solid var(--color-border);
   text-decoration: none;
   color: var(--color-text);
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -26,6 +26,7 @@
 
 .project-item:last-child {
   border-bottom: 1px solid var(--color-border);
+  transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item:hover {
@@ -33,9 +34,8 @@
   z-index: 2; /* Bring above for clarity */
 }
 
-
 .project-title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 600;
   text-transform: uppercase;
   transition: transform 0.3s ease;
