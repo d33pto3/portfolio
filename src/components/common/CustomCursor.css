@@ -8,13 +8,8 @@
   pointer-events: none;
   z-index: 9999;
   transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  mix-blend-mode: difference;
   transform-origin: center center;
-}
-
-.custom-cursor.theme-dark {
   background-color: #fff;
 }
 
-.custom-cursor.theme-light {
-  background-color: #000;
-}
