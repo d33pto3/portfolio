@@ -1,0 +1,138 @@
+.about-page {
+  padding: 15vh 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-hero {
+  margin-bottom: 120px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.about-intro-text {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  margin: 0;
+  text-align: left;
+}
+
+.about-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.about-bio-section,
+.about-experience-section,
+.about-education-section,
+.about-disciplines-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-bio-section {
+  max-width: 800px;
+  text-align: left;
+}
+
+.about-bio-text {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.data-section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.data-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 0;
+  font-size: 1.1rem;
+}
+
+.item-main {
+  font-weight: 500;
+}
+
+.item-sub {
+  color: var(--color-accent);
+  font-size: 0.95rem;
+}
+
+.disciplines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.discipline-item {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .about-page {
+    padding: 120px 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 100px 1.5rem;
+  }
+
+  .about-hero {
+    margin-bottom: 60px;
+  }
+
+  .about-main-content {
+    gap: 80px;
+  }
+
+  .data-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 16px 0;
+  }
+
+  .discipline-item {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro-text {
+    font-size: 2.2rem;
+  }
+}

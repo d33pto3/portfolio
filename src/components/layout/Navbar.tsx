@@ -8,21 +8,23 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo" data-hover="true">
-        <Link to="/">RAKIN FARHAN</Link>
-      </div>
-      <div className="navbar-links">
-        <Link to="/about" data-hover="true">
-          About
-        </Link>
-        <button
-          onClick={toggleTheme}
-          className="theme-toggle"
-          data-hover="true"
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? "Light" : "Dark"}
-        </button>
+      <div className="navbar-container">
+        <div className="navbar-logo" data-hover="true">
+          <Link to="/">RAKIN FARHAN</Link>
+        </div>
+        <div className="navbar-links">
+          <Link to="/about" data-hover="true">
+            About
+          </Link>
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle"
+            data-hover="true"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? "Light" : "Dark"}
+          </button>
+        </div>
       </div>
     </nav>
   );
