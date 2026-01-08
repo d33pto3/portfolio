@@ -72,9 +72,11 @@
 
 .data-item {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 14px 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 16px 0;
   font-size: 1.1rem;
 }
 
@@ -88,10 +90,10 @@
 }
 
 .disciplines-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
 }
 
 .discipline-item {
@@ -120,11 +122,9 @@
     gap: 80px;
   }
 
-  .data-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 16px 0;
+  .disciplines-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .discipline-item {
