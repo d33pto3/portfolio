@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 4rem;
+  padding: 3rem var(--container-padding-x);
   border-top: 1px solid var(--color-border);
   text-decoration: none;
   color: var(--color-text);
@@ -85,6 +85,6 @@
   }
   
   .project-item {
-    padding: 2rem 1.5rem;
+    padding: 2rem var(--container-padding-x-mobile);
   }
 }

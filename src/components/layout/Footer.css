@@ -1,8 +1,6 @@
 .footer {
-  padding: 40px 2rem;
-  display: flex;
+  padding: 40px var(--container-padding-x);
   width: 100%;
-  justify-content: center;
   background: var(--color-bg);
 }
 
@@ -11,9 +9,6 @@
   color: var(--color-accent);
   letter-spacing: 0.05em;
   font-weight: 400;
-  text-align: left;
-  width: 100%;
-  max-width: 1200px;
 }
 
 @media (max-width: 768px) {

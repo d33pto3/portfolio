@@ -4,16 +4,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0;
   overflow: hidden;
 }
 
 .hero-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 0 var(--container-padding-x);
 }
 
 .hero-title {
@@ -57,11 +58,14 @@
     flex-basis: 100%;
   }
 }
-
 @media (max-width: 768px) {
   .hero {
     height: 50vh;
-    padding: 0 1.5rem;
+    padding: 0;
+  }
+
+  .hero-content {
+    padding: 0 var(--container-padding-x-mobile);
   }
 
   .hero-content {
