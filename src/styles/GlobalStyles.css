@@ -12,6 +12,7 @@
   --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   /* Layout */
+  --nav-hero-max-width: 1500px;
   --container-max-width: 1200px;
   --container-padding-x: 4rem;
   --container-padding-x-mobile: 1.5rem;

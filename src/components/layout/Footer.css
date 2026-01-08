@@ -1,7 +1,15 @@
 .footer {
-  padding: 40px var(--container-padding-x);
+  padding: 40px 0;
   width: 100%;
   background: var(--color-bg);
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--container-padding-x);
 }
 
 .footer-text {
@@ -12,7 +20,7 @@
 }
 
 @media (max-width: 768px) {
-  .footer {
-    padding: 30px 1.5rem;
+  .footer-content {
+    padding: 0 var(--container-padding-x-mobile);
   }
 }
