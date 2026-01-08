@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from "../../context/ThemeContext";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -12,15 +12,16 @@ export default function Navbar() {
         <Link to="/">RAKIN FARHAN</Link>
       </div>
       <div className="navbar-links">
-        <Link to="/about" data-hover="true">About</Link>
-        <a href="mailto:hello@rakinfarhan.com" data-hover="true">Contact</a>
-        <button 
-          onClick={toggleTheme} 
+        <Link to="/about" data-hover="true">
+          About
+        </Link>
+        <button
+          onClick={toggleTheme}
           className="theme-toggle"
           data-hover="true"
           aria-label="Toggle theme"
         >
-          {theme === 'dark' ? 'Light' : 'Dark'}
+          {theme === "dark" ? "Light" : "Dark"}
         </button>
       </div>
     </nav>
