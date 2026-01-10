@@ -105,13 +105,13 @@
 
 @media (max-width: 1024px) {
   .about-page {
-    padding: 120px 4rem;
+    padding: 120px var(--container-padding-x);
   }
 }
 
 @media (max-width: 768px) {
   .about-page {
-    padding: 100px 1.5rem;
+    padding: 100px var(--container-padding-x-mobile);
   }
 
   .about-hero {
