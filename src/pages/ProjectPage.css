@@ -37,7 +37,7 @@
   color: var(--color-accent);
 }
 
-.project-title {
+.project-page-title {
   font-family: var(--font-primary);
   font-size: clamp(3.5rem, 8vw, 6.5rem);
   font-weight: 700;
@@ -57,86 +57,63 @@
   opacity: 0.9;
 }
 
-/* --- Layout Grid for Details --- */
-.project-details-grid {
+/* --- Description --- */
+.project-description-section {
+  max-width: var(--container-max-width);
+  width: 100%;
+  padding: 0 var(--container-padding-x);
+  margin: 0 auto 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.description-paragraph {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--color-text);
+  font-weight: 300;
+  max-width: 900px;
+}
+
+/* --- Technical Stack (Grid Layout) --- */
+.project-tech-stack {
   max-width: var(--container-max-width);
   width: 100%;
   padding: 0 var(--container-padding-x);
   margin: 0 auto 120px auto;
+}
+
+.tech-stack-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Tech stack left, Description right */
-  gap: 80px;
-}
-
-.section-label {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-accent);
-  margin-bottom: 32px;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 16px;
-  display: block;
-}
-
-/* --- Technical Stack --- */
-.project-tech-stack {
-  height: fit-content;
-}
-
-.tech-stack-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
 }
 
 .tech-category-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 20px;
-  color: var(--color-text);
+  margin-bottom: 24px;
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.tech-list {
+.tech-list-simple {
   list-style: none;
   padding: 0;
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping if needed, though list implies vertical mostly */
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
-.tech-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.tech-tool {
+.tech-item-simple {
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-text);
-}
-
-.tech-purpose {
-  font-size: 0.95rem;
-  color: var(--color-accent);
-  line-height: 1.4;
-}
-
-/* --- Description --- */
-.description-content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.description-paragraph {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--color-text);
-  font-weight: 300;
 }
 
 /* --- Images Section --- */
@@ -217,10 +194,7 @@
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-  .project-details-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
+  /* No special grid changes needed for auto-fit */
 }
 
 @media (max-width: 768px) {
@@ -229,18 +203,20 @@
   }
 
   .project-hero-content,
-  .project-details-grid,
+  .project-description-section,
+  .project-tech-stack,
   .project-images-section,
   .project-roadmap {
     padding: 0 var(--container-padding-x-mobile);
     margin-bottom: 80px;
   }
 
-  .project-title {
+  .project-page-title {
     font-size: 3rem;
   }
 
-  .roadmap-list {
+  .tech-stack-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 }

@@ -72,52 +72,46 @@ export default function ProjectPage() {
           <span className="project-category-label">
             {project.category} — {project.year}
           </span>
-          <h1 className="project-title">{project.title}</h1>
+          <h1 className="project-page-title">{project.title}</h1>
         </div>
         <h2 className="project-summary">{project.summary}</h2>
       </section>
 
-      <div className="project-details-grid">
-        {/* 3. Technical Stack */}
-        <section className="project-tech-stack fade-up">
-          <h3 className="section-label">Technical Stack</h3>
-          <div className="tech-stack-container">
-            {project.technicalStack.map((stack, index) => (
-              <div key={index} className="tech-category">
-                <h4 className="tech-category-title">{stack.category}</h4>
-                <ul className="tech-list">
-                  {stack.items.map((item, i) => (
-                    <li key={i} className="tech-item">
-                      <span className="tech-tool">{item.tool}</span>
-                      <span className="tech-purpose">{item.purpose}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
+      {/* 3. Description (Deep Dive) */}
+      <section className="project-description-section fade-up">
+        {project.description.map((paragraph, index) => (
+          <p key={index} className="description-paragraph">
+            {paragraph}
+          </p>
+        ))}
+      </section>
 
-        {/* 4. Description */}
-        <section className="project-description-section fade-up">
-          <h3 className="section-label">Deep Dive</h3>
-          <div className="description-content">
-            {project.description.map((paragraph, index) => (
-              <p key={index} className="description-paragraph">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </section>
-      </div>
+      {/* 4. Technical Stack (Names Only) */}
+      <section className="project-tech-stack fade-up">
+        <h3 className="section-label">Technical Stack</h3>
+        <div className="tech-stack-grid">
+          {project.technicalStack.map((stack, index) => (
+            <div key={index} className="tech-category">
+              <h4 className="tech-category-title">{stack.category}</h4>
+              <ul className="tech-list-simple">
+                {stack.items.map((item, i) => (
+                  <li key={i} className="tech-item-simple">
+                    {item.tool}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* 5. Images */}
       <section className="project-images-section fade-up">
-        {project.images.map((img, index) => (
+        {Array.from({ length: project.images }, (_, index) => (
           <div key={index} className="project-image-wrapper">
             <img
-              src={img}
-              alt={`${project.title} screenshot ${index + 1}`}
+              src={`/${project.id}/${index + 1}.png`}
+              alt={`${project.title}${index + 1}`}
               className="project-image"
             />
           </div>

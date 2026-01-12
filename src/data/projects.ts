@@ -17,7 +17,7 @@ export interface Project {
   summary: string;
   technicalStack: TechCategory[];
   description: string[]; // Array of paragraphs
-  images: string[];
+  images: number;
   futureRoadmap: string[];
 }
 
@@ -29,25 +29,30 @@ export const projects: Project[] = [
     year: "2023",
     image: "./cinehall.png",
     summary:
-      "A comprehensive cinema management platform empowering hall owners and streamlining ticket booking for moviegoers.",
+      "A unified cinema booking and management ecosystem that creates a seamless bridge between movie theater owners and audiences across web and mobile platforms.",
     technicalStack: [
       {
-        category: "Frontend",
+        category: "Frontend & Mobile",
         items: [
           {
-            tool: "React",
+            tool: "Next.js 16 (Web)",
             purpose:
-              "Building a dynamic, responsive user interface for both admins and customers.",
+              "Powers the public-facing platform to maximize SEO and server-side rendering performance.",
           },
           {
-            tool: "Redux Toolkit",
+            tool: "Vite & React 19 (Admin)",
             purpose:
-              "Managing complex global state for booking flows and admin dashboards.",
+              "Drives the data-intensive dashboard, enabling a snappy, rich client-side interface.",
+          },
+          {
+            tool: "Expo (Mobile)",
+            purpose:
+              "Delivers a native booking experience for iOS and Android, sharing design tokens via NativeWind.",
           },
           {
             tool: "Tailwind CSS",
             purpose:
-              "Rapidly styling a custom design system with consistent constraints.",
+              "Key driver for a consistent, responsive, and modern 'Cinematic Noir' aesthetic across all three pillars.",
           },
         ],
       },
@@ -57,44 +62,152 @@ export const projects: Project[] = [
           {
             tool: "Node.js & Express",
             purpose:
-              "Handling API requests, authentication, and business logic.",
+              "Orchestrates the core RESTful API, serving as the central nervous system for all three applications.",
           },
           {
-            tool: "MongoDB",
+            tool: "TypeScript",
             purpose:
-              "Storing flexible data structures for movies, showtimes, and user profiles.",
-          },
-          {
-            tool: "Mongoose",
-            purpose:
-              "Modeling application data and enforcing schema validation.",
+              "Enforces end-to-end type safety and code maintainability across the entire full-stack monorepo.",
           },
         ],
       },
       {
-        category: "Infrastructure",
+        category: "Infrastructure & Services",
         items: [
           {
-            tool: "Vercel",
-            purpose: "Hosting the frontend with seamless CI/CD integration.",
+            tool: "MongoDB",
+            purpose:
+              "Stores and manages complex data relationships between movies, showtimes, hall layouts, and user bookings.",
           },
-          { tool: "Render", purpose: "Deploying the backend API service." },
+          {
+            tool: "Firebase Auth",
+            purpose:
+              "Provides secure, frictionless, and unified authentication across Web, Admin, and Mobile.",
+          },
+          {
+            tool: "SSLCommerz",
+            purpose:
+              "Integrated payment gateway for processing secure, real-time online ticket transactions.",
+          },
         ],
       },
     ],
     description: [
-      "The cinema industry in Bangladesh has largely remained offline, leading to inefficiencies in ticket management and a frustrating experience for moviegoers. Cinehall addresses this gap by providing a centralized platform that connects cinema hall owners, administrators, and users. The challenge was to create a system that could handle real-time inventory management (seat booking) while providing distinct interfaces for different user roles.",
-      "The architectural solution involves a decoupled Monorepo structure (client and server). The backend utilizes a RESTful API design to serve data to the React frontend. We implemented role-based access control (RBAC) to ensure security across Admin, Hall Owner, and User portals. For the booking engine, we used optimistic UI updates to ensure the application feels snappy, while verifying seat availability on the server side to prevent double bookings.",
-      "A key technical implementation detail was the real-time seat selection feature. We utilized efficient data structures to map the cinema seating layout and optimized database queries to check seat status instantly. This ensures that when a user selects a seat, it is temporarily locked to prevent race conditions during high-traffic movie releases.",
+      "The cinema booking landscape is often fragmented, transforming what should be a simple night out into a frustrating experience of disjointed apps and inefficient management tools. Cinehall addresses this by building a cohesive multi-platform solution that serves two masters equally well: the moviegoer and the theater owner. The project is built with a modern, scalable architecture consisting of three core pillars: CineHall Web for high-speed discovery, CineHall Admin for sophisticated management, and CineHall Mobile for on-the-go access.",
+      "The architectural solution involves a centralized Node.js/Express backend acting as the single source of truth, managing the intricate state of seat availability, movie schedules, and financial transactions across the entire ecosystem. To ensure high performance, CineHall Web utilizes Next.js's server capabilities, while CineHall Admin uses Vite to support complex interactions like managing hall layouts via drag-and-drop interfaces.",
+      "A key technical highlight is the implementation of automated booking integrity checks using node-cron. This system effectively manages temporary seat locks and clears abandoned sessions to maximize ticket inventory without human intervention, ensuring strict data integrity and preventing booking collisions.",
     ],
-    images: [
-      "./cinehall.png",
-      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2670&auto=format&fit=crop",
-    ],
+    images: 4,
     futureRoadmap: [
-      "Implement WebSocket integration for live seat updates across all connected clients.",
-      "Add a mobile application using React Native for on-the-go booking.",
-      "Integrate automated payment gateway refunds for cancelled shows.",
+      "WebSockets for real-time seat locking.",
+      "Analytics suite for revenue tracking.",
+      "AI-driven movie recommendation engine.",
+    ],
+  },
+  {
+    id: "imagewall",
+    title: "I Mage Wall",
+    category: "Frontend Development",
+    year: "2024",
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+    summary:
+      'A high-performance, masonry-style image gallery that empowers creators to curate and share visual narratives in a responsive, "Cinematic Noir" environment without aspect-ratio constraints.',
+    technicalStack: [
+      {
+        category: "Frontend Architecture",
+        items: [
+          {
+            tool: "React 18 & TypeScript",
+            purpose: "Component logic & Type safety",
+          },
+          { tool: "Vite", purpose: "Next-gen build tooling" },
+        ],
+      },
+      {
+        category: "UI & Animation",
+        items: [
+          { tool: "Tailwind CSS", purpose: "Utility-first styling" },
+          {
+            tool: "Framer Motion",
+            purpose: "Physics-based micro-interactions & page transitions",
+          },
+          { tool: "Masonic", purpose: "Virtualized grid engine" },
+        ],
+      },
+      {
+        category: "Backend & Infrastructure",
+        items: [
+          { tool: "Firebase Auth", purpose: "Secure identity management" },
+          { tool: "Cloud Firestore", purpose: "NoSQL realtime database" },
+          { tool: "Firebase Storage", purpose: "Scalable media hosting" },
+        ],
+      },
+    ],
+    description: [
+      "In the current digital landscape, presenting high-resolution visual content often suffers from rigid grid systems that crop images or force unnatural aspect ratios, diminishing the artist's original intent. Additionally, building a secure, scalable backend for media hosting usually requires significant infrastructure overhead. Mage's Wall addresses these core issues by providing a fluid, adaptive platform where content dictates the form, not the other way around.",
+      "The application leverages a sophisticated virtualization engine to render a seamless masonry layout. This ensures that whether a user is viewing a vertical panorama or a wide landscape, proper screen real estate is allocated dynamically. Under the hood, the architecture utilizes a serverless Firebase integration, separating concerns effectively: authentication state is managed via a custom useAuth hook listener for persistent sessions, while image metadata and binary data are synchronized in real-time between Firestore and Storage buckets.",
+      'To achieve a premium "Cinematic" feel, the interface implements a glassmorphic design language using backdrop-filters and subtle gradients. Performance is maintained through optimistic UI updates and skeletal loading states, effectively negating Cumulative Layout Shift (CLS) during network requests. This combination of strict TypeScript reliability and fluid framer-motion animations results in an experience that feels both robust and organic.',
+    ],
+    images: 2,
+    futureRoadmap: [
+      "AI-Powered Categorization via Google Cloud Vision.",
+      "Social Interaction Layer for user curation.",
+      "Progressive Web App (PWA) for offline access.",
+    ],
+  },
+  {
+    id: "hawa",
+    title: "Hawa Weather App",
+    category: "Web Application",
+    year: "2026",
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2700&auto=format&fit=crop",
+    summary:
+      "A high-precision, Swiss-style weather dashboard featuring dynamic theming (Swiss, Cyber, Glass), bi-lingual support (En/Bn), and interactive map integration.",
+    technicalStack: [
+      {
+        category: "Core",
+        items: [
+          { tool: "React", purpose: "UI Library" },
+          { tool: "TypeScript", purpose: "Type Safety" },
+          { tool: "Vite", purpose: "Build Tool" },
+        ],
+      },
+      {
+        category: "Styling",
+        items: [
+          { tool: "Tailwind CSS", purpose: "Utility CSS" },
+          { tool: "Vanilla CSS", purpose: "Custom Styles" },
+        ],
+      },
+      {
+        category: "Libraries",
+        items: [
+          { tool: "React Leaflet", purpose: "Maps" },
+          { tool: "i18next", purpose: "Internationalization" },
+          { tool: "React Icons", purpose: "Icons" },
+        ],
+      },
+      {
+        category: "Data & APIs",
+        items: [
+          { tool: "Open-Meteo API", purpose: "Weather Data" },
+          { tool: "Nominatim API", purpose: "Geocoding" },
+        ],
+      },
+    ],
+    description: [
+      "Hawa Weather App represents a stylistic departure from minimal weather dashboards, adopting a bold 'Swiss Style' grid layout that emphasizes typographic hierarchy and structural clarity. The application offers a unique user experience with three distinct toggleable themes—Swiss, Cyber, and Glass—allowing the interface to adapt from a rigid brutalist look to a modern frosted glass aesthetic instantly.",
+      "Functionally, the app provides real-time weather metrics including temperature, apparent temperature, wind speed, and humidity by leveraging the Open-Meteo API. It features robust location services, allowing users to select districts ('Zillas') from a list or pinpoint precise locations on an interactive Leaflet map, which are then reverse-geocoded to human-readable addresses.",
+      "Built for accessibility and performance, the application includes full internationalization support with seamless English-to-Bangla switching. The responsive grid architecture ensures that the complex layout scales elegantly across devices, maintaining its visual integrity from desktop monitors to mobile screens.",
+    ],
+    images: 0,
+    futureRoadmap: [
+      "Implement a graphical 7-day forecast visualization.",
+      "Add 'Favorites' functionality to save and manage multiple locations.",
+      "Integrate severe weather alerts and browser notifications.",
+      "Develop a progressive web app (PWA) version for offline capabilities.",
     ],
   },
   {
@@ -147,101 +260,11 @@ export const projects: Project[] = [
       "We chose Next.js for its hybrid rendering capabilities, allowing us to generate static pages for travel guides (vital for SEO) while using dynamic rendering for the booking system. The integration with Supabase allowed for rapid development of the backend, utilizing Row Level Security (RLS) to safely manage user data directly from the frontend.",
       "Performance was a priority, specifically for the image-heavy content. We implemented an advanced image optimization pipeline using Next.js Image component and lazy loading strategies. Additionally, the map integration uses vector tiles to ensure smooth zooming and panning even on lower-end devices, providing an interactive exploration experience.",
     ],
-    images: [
-      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=2700&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1506197061617-7f5c0b093236?q=80&w=2670&auto=format&fit=crop",
-    ],
+    images: 0,
     futureRoadmap: [
-      "Develop an offline-first mode for travelers with poor connectivity in remote areas.",
-      "Implement a community review and photo-sharing system.",
-      "Partner with local transport services for integrated travel logistics.",
-    ],
-  },
-  {
-    id: "imagewall",
-    title: "I-MAGE-WALL",
-    category: "Frontend Development",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
-    summary:
-      "A highly interactive, infinite-scroll image gallery showcasing high-resolution photography with fluid animations.",
-    technicalStack: [
-      {
-        category: "Frontend",
-        items: [
-          {
-            tool: "Vanilla JavaScript",
-            purpose: "Maximizing performance without framework overhead.",
-          },
-          {
-            tool: "WebGL (Three.js)",
-            purpose: "Rendering distortion effects and smooth transitions.",
-          },
-          {
-            tool: "Lenis Scroll",
-            purpose:
-              " providing a normalized, smooth scrolling experience across browsers.",
-          },
-        ],
-      },
-    ],
-    description: [
-      "Standard image galleries can feel static and uninspiring. I-Mage-Wall was created as an experiment to push the boundaries of web interactions, transforming a simple gallery into an engaging visual journey. The primary challenge was handling a large number of high-field images without compromising frame rate or scrolling performance.",
-      "The solution leverages WebGL to offload rendering tasks to the GPU. By treating images as textures on a 3D plane, we achieved distortion effects and fluid motion that CSS alone cannot match. We implemented a custom virtual scroll logic that only renders items currently in the viewport (and a small buffer), recycling DOM elements to keep the memory footprint low.",
-      "A standout technical detail is the implementation of the 'infinite' scroll illusion. By mathematically modifying the UV coordinates in the fragment shader based on scroll position, we created a seamless loop. This required precise synchronization between the DOM scroll position and the WebGL scene to ensure the HTML overlays perfectly matched the 3D canvas.",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop",
-    ],
-    futureRoadmap: [
-      "Add support for video textures mixed with static images.",
-      "Implement gyroscope-based interaction for mobile devices.",
-      "Create a backend to allow users to upload and curate their own walls.",
-    ],
-  },
-  {
-    id: "hawa",
-    title: "HAWA",
-    category: "Frontend Development",
-    year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2700&auto=format&fit=crop",
-    summary:
-      "A conceptual weather visualization app that turns meteorological data into soothing, generative art.",
-    technicalStack: [
-      {
-        category: "Frontend",
-        items: [
-          {
-            tool: "React",
-            purpose: "Managing UI state and component lifecycle.",
-          },
-          {
-            tool: "Canvas API",
-            purpose: "Drawing real-time generative particles based on data.",
-          },
-          {
-            tool: "OpenWeatherMap API",
-            purpose: "Sourcing live meteorological data.",
-          },
-        ],
-      },
-    ],
-    description: [
-      "Weather apps are typically purely functional and data-heavy. Hawa attempts to humanize this data, translating numbers into feelings. The challenge was to create an algorithm that could meaningfully interpret weather conditions—like wind speed 15km/h vs 50km/h—into distinct visual styles without being literal or cartoonish.",
-      "We built a generative art engine using the HTML5 Canvas API. The engine takes weather parameters as inputs to control particle physics, color palettes, and motion blur. For instance, high humidity triggers a 'soft focus' effect mimicking mist, while high wind speeds increase the entropy and velocity of the particles.",
-      "Handling the state management for the generative system was crucial. We separated the animation loop from the React render cycle to ensure 60fps performance. React manages the data fetching and high-level configuration, while a dedicated class handles the per-frame canvas drawing, preventing React re-renders from causing stutter in the animation.",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2700&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2670&auto=format&fit=crop",
-    ],
-    futureRoadmap: [
-      "Integrate audio synthesis to generate ambient, weather-based soundscapes.",
-      "Expand the generative models to include astronomical data (moon phases, star visibility).",
-      "Release as a standalone PWA or native mobile app widget.",
+      "Offline-first mode for remote areas.",
+      "Community review and photo-sharing.",
+      "Integrated local transport booking.",
     ],
   },
 ];
