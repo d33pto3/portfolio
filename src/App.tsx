@@ -1,8 +1,14 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Layout from './components/layout/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import PageTransition from './components/common/PageTransition';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ProjectPage from "./pages/ProjectPage";
+import PageTransition from "./components/common/PageTransition";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -11,7 +17,8 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/work" element={<Home />} /> {/* Reuse Home for now since work list is there */}
+        <Route path="/work" element={<Home />} />
+        <Route path="/work/:id" element={<ProjectPage />} />
       </Routes>
     </PageTransition>
   );
