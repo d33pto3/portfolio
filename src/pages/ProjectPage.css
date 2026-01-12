@@ -1,0 +1,246 @@
+.project-page {
+  padding-top: 180px;
+  padding-bottom: 15vh;
+  width: 100%;
+}
+
+.project-not-found {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* --- Hero Section (Title + Summary) --- */
+.project-hero-content {
+  max-width: var(--container-max-width);
+  width: 100%;
+  padding: 0 var(--container-padding-x);
+  margin: 0 auto 120px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-category-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.project-title {
+  font-family: var(--font-primary);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.project-summary {
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* --- Layout Grid for Details --- */
+.project-details-grid {
+  max-width: var(--container-max-width);
+  width: 100%;
+  padding: 0 var(--container-padding-x);
+  margin: 0 auto 120px auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Tech stack left, Description right */
+  gap: 80px;
+}
+
+.section-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 16px;
+  display: block;
+}
+
+/* --- Technical Stack --- */
+.project-tech-stack {
+  height: fit-content;
+}
+
+.tech-stack-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.tech-category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tech-tool {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.tech-purpose {
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  line-height: 1.4;
+}
+
+/* --- Description --- */
+.description-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.description-paragraph {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  font-weight: 300;
+}
+
+/* --- Images Section --- */
+.project-images-section {
+  max-width: var(--nav-hero-max-width);
+  width: 100%;
+  padding: 0 var(--container-padding-x);
+  margin: 0 auto 120px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.project-image-wrapper {
+  width: 100%;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* --- Roadmap --- */
+.project-roadmap {
+  max-width: var(--container-max-width);
+  width: 100%;
+  padding: 0 var(--container-padding-x);
+  margin: 0 auto 120px auto;
+}
+
+.roadmap-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.roadmap-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.roadmap-bullet {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.roadmap-item p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.project-navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.back-link {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: opacity 0.3s;
+}
+
+.back-link:hover {
+  opacity: 0.7;
+  border-bottom-color: var(--color-text);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .project-details-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-page {
+    padding-top: 120px;
+  }
+
+  .project-hero-content,
+  .project-details-grid,
+  .project-images-section,
+  .project-roadmap {
+    padding: 0 var(--container-padding-x-mobile);
+    margin-bottom: 80px;
+  }
+
+  .project-title {
+    font-size: 3rem;
+  }
+
+  .roadmap-list {
+    grid-template-columns: 1fr;
+  }
+}
