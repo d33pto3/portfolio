@@ -202,7 +202,7 @@ export const projects: Project[] = [
       "Functionally, the app provides real-time weather metrics including temperature, apparent temperature, wind speed, and humidity by leveraging the Open-Meteo API. It features robust location services, allowing users to select districts ('Zillas') from a list or pinpoint precise locations on an interactive Leaflet map, which are then reverse-geocoded to human-readable addresses.",
       "Built for accessibility and performance, the application includes full internationalization support with seamless English-to-Bangla switching. The responsive grid architecture ensures that the complex layout scales elegantly across devices, maintaining its visual integrity from desktop monitors to mobile screens.",
     ],
-    images: 0,
+    images: 3,
     futureRoadmap: [
       "Implement a graphical 7-day forecast visualization.",
       "Add 'Favorites' functionality to save and manage multiple locations.",
@@ -260,7 +260,7 @@ export const projects: Project[] = [
       "We chose Next.js for its hybrid rendering capabilities, allowing us to generate static pages for travel guides (vital for SEO) while using dynamic rendering for the booking system. The integration with Supabase allowed for rapid development of the backend, utilizing Row Level Security (RLS) to safely manage user data directly from the frontend.",
       "Performance was a priority, specifically for the image-heavy content. We implemented an advanced image optimization pipeline using Next.js Image component and lazy loading strategies. Additionally, the map integration uses vector tiles to ensure smooth zooming and panning even on lower-end devices, providing an interactive exploration experience.",
     ],
-    images: 0,
+    images: 1,
     futureRoadmap: [
       "Offline-first mode for remote areas.",
       "Community review and photo-sharing.",
