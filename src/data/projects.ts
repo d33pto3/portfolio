@@ -218,24 +218,19 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=2700&auto=format&fit=crop",
     summary:
-      "An immersive travel guide and booking platform dedicated to the serene hill tracks of Bangladesh.",
+      "An immersive travel guide to the serene hill tracks of Bangladesh.",
     technicalStack: [
       {
         category: "Frontend",
         items: [
           {
-            tool: "Next.js",
+            tool: "Vite & React 19",
             purpose:
               "Leveraging server-side rendering for optimal SEO and performance.",
           },
           {
-            tool: "Framer Motion",
+            tool: "Tailwind CSS, Framer Motion",
             purpose: "Creating smooth page transitions and micro-interactions.",
-          },
-          {
-            tool: "Mapbox GL",
-            purpose:
-              "Rendering interactive maps for location scouting and navigation.",
           },
         ],
       },
@@ -257,8 +252,7 @@ export const projects: Project[] = [
     ],
     description: [
       "Travelers often struggle to find reliable information and booking options for remote areas like the Hill Tracts. Paharnama is built to bridge this gap, offering a curated platform for discovery and reservation. The goal was to build an application that not only functions well but also visually represents the tranquility of the destination.",
-      "We chose Next.js for its hybrid rendering capabilities, allowing us to generate static pages for travel guides (vital for SEO) while using dynamic rendering for the booking system. The integration with Supabase allowed for rapid development of the backend, utilizing Row Level Security (RLS) to safely manage user data directly from the frontend.",
-      "Performance was a priority, specifically for the image-heavy content. We implemented an advanced image optimization pipeline using Next.js Image component and lazy loading strategies. Additionally, the map integration uses vector tiles to ensure smooth zooming and panning even on lower-end devices, providing an interactive exploration experience.",
+      "",
     ],
     images: 1,
     futureRoadmap: [
