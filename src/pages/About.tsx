@@ -8,31 +8,35 @@ const About = () => {
   const experiences = [
     {
       role: "Full Stack Developer",
-      company: "Self-Employed",
-      period: "2023 — Present",
+      company: "One Direction Companies Limited",
+      period: "Apr 2025 — Present",
     },
-    { role: "Frontend Developer", company: "Freelance", period: "2022 — 2023" },
     {
-      role: "Junior Web Developer",
-      company: "Tech Solutions",
-      period: "2021 — 2022",
+      role: "Backend Developer",
+      company: "Bethankful",
+      period: "Dec 2024 — Apr 2025",
+    },
+    {
+      role: "Frontend Developer",
+      company: "Ideeza",
+      period: "May 2023 — Nov 2024",
     },
   ];
 
   const education = [
     {
       degree: "B.Sc. in Computer Science",
-      institution: "University of Dhaka",
-      period: "2019 — 2023",
+      institution: "Mawlana Bhashani Science and Technology University",
+      period: "2017 — 2023",
     },
   ];
 
   const disciplines = [
     "Web Development",
-    "UI/UX Design",
     "Mobile Applications",
     "Design Systems",
     "Backend Architecture",
+    "UI/UX Design",
     "Motion Design",
   ];
 

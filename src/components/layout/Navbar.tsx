@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import "./Navbar.css";
 
@@ -8,6 +8,7 @@ import { useTheme } from "../../context/ThemeContext";
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const navRef = useRef<HTMLElement>(null);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -30,8 +31,12 @@ export default function Navbar() {
           <Link to="/">RAKIN FARHAN</Link>
         </div>
         <div className="navbar-links">
-          <Link to="/about" data-hover="true">
-            About
+          <Link
+            to={pathname === "/about" ? "/" : "/about"}
+            data-hover="true"
+            className={pathname === "/about" ? "active" : ""}
+          >
+            {pathname === "/about" ? "Home" : "About"}
           </Link>
           <button
             onClick={toggleTheme}

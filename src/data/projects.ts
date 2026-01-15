@@ -109,8 +109,7 @@ export const projects: Project[] = [
     title: "I Mage Wall",
     category: "Frontend Development",
     year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+    image: "/imagewall/1.png",
     summary:
       'A high-performance, masonry-style image gallery that empowers creators to curate and share visual narratives in a responsive, "Cinematic Noir" environment without aspect-ratio constraints.',
     technicalStack: [
@@ -161,8 +160,7 @@ export const projects: Project[] = [
     title: "Hawa Weather App",
     category: "Web Application",
     year: "2026",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2700&auto=format&fit=crop",
+    image: "/hawa/1.png",
     summary:
       "A high-precision, Swiss-style weather dashboard featuring dynamic theming (Swiss, Cyber, Glass), bi-lingual support (En/Bn), and interactive map integration.",
     technicalStack: [
@@ -215,8 +213,7 @@ export const projects: Project[] = [
     title: "PAHARNAMA",
     category: "Full Stack Development",
     year: "2026",
-    image:
-      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=2700&auto=format&fit=crop",
+    image: "/paharnama/1.png",
     summary:
       "An immersive travel guide to the serene hill tracks of Bangladesh.",
     technicalStack: [
